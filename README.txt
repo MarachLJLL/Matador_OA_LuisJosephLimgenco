@@ -32,6 +32,8 @@ Query Interface:
 Setup instructions
 ########################################################
 
+Running:
+    docker run -p 5000:21600 0575fce2ec27
 
 ########################################################
 Examples of usage and queries
