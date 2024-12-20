@@ -1,0 +1,17 @@
+{
+  "name": "matador_oa_luisjosephlimgenco",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start:producer": "node ./producer/index.js",
+    "start:consumer": "node ./consumer/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "avsc": "^5.7.7",
+    "node-rdkafka": "^3.2.1"
+  }
+}
