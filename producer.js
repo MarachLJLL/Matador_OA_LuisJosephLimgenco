@@ -4,7 +4,7 @@ import eventType from './eventType.js';
 
 const stream = Kafka.Producer.createWriteStream({
     'metadata.broker.list': 'localhost:9092'
-}, {}, {topic: 'test'});
+}, {}, {topic: 'user_activity'});
 
 function createEvent() {
     const now = new Date();
