@@ -11,7 +11,7 @@ consumer.connect();
 
 consumer.on('ready', () =>{
     console.log('consumer ready..');
-    consumer.subscribe(['test']);
+    consumer.subscribe(['user_activity']);
     consumer.consume();
 }).on('data', (data) => {
     console.log(`received message: ${eventType.fromBuffer(data.value)}`)
