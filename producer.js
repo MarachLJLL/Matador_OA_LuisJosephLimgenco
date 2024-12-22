@@ -1,4 +1,3 @@
-console.log('producer..');
 import Kafka from 'node-rdkafka';
 import eventType from './eventType.js';
 
