@@ -33,13 +33,17 @@ Setup instructions
 ########################################################
 
 Running:
-    docker run -p 5000:21600 0575fce2ec27
+    (Items in quotes are to be pasted into the terminal)
+    Open terminal and cd into the folder containing this
+    README file
+    "docker-compose up"
+    "npm run start:db"
+    "npm run start:producer"
     
-    Open 1 terminal:
+    Open 2nd terminal and cd into the same folder:
     npm run start:producer
-    
-    Open 2nd terminal:
-    npm run start:producer
+
+    Once satisfied with the data generated, close producer
 
 ########################################################
 Examples of usage and queries
