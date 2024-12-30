@@ -4,9 +4,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start:db": "node ./initDb.js",
-    "start:producer": "node ./producer.js",
-    "start:consumer": "node ./consumer.js"
+    "initdb": "node ./initDb.js",
+    "producer": "node ./producer.js",
+    "consumer": "node ./consumer.js",
+    "query_api": "node ./query-interface.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,7 @@
   "dependencies": {
     "avsc": "^5.7.7",
     "clickhouse": "^2.6.0",
+    "express": "^4.21.2",
     "node-rdkafka": "^3.2.1"
   }
 }
