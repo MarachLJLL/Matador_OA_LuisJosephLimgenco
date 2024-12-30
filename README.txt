@@ -15,12 +15,12 @@ Event Producer:
 
 Event Consumer:
     Events are processed in the following ways:
-    - Inserted as raw event data into the `events` table in the ClickHouse database.
-    - Aggregated by User ID and Event Type, with counts and the latest timestamp stored in the `processed_data` table.
+    - Inserted as raw event data into the 'events' table in the ClickHouse database.
+    - Aggregated by User ID and Event Type, with counts and the latest timestamp stored in the 'processed_data' table.
 
 Database Schema:
     Tables:
-    - `events`:
+    - 'events':
         Fields:
         - User ID
         - Event type
@@ -28,7 +28,7 @@ Database Schema:
         - Page URL
         - Event Date (automatically generated from Timestamp)
 
-    - `processed_data`:
+    - 'processed_data':
         Fields:
         - User ID
         - Event type
@@ -37,8 +37,8 @@ Database Schema:
 
 Query Interface:
     API Endpoints:
-    - `/total-events-by-user`: Returns the total number of events for each user.
-    - `/most-frequent-events`: Returns the most frequent event types in the past 24 hours.
+    - '/total-events-by-user': Returns the total number of events for each user.
+    - '/most-frequent-events': Returns the most frequent event types in the past 24 hours.
 
 ########################################################
 Setup Instructions
@@ -48,43 +48,27 @@ Prerequisites:
     Ensure Docker and Node.js are installed on your system.
 
 Running:
-    (Items in quotes are to be pasted into the terminal)
-    1. Open a terminal and navigate to the folder containing this README file:
-        ```
-        cd <project-folder>
-        ```
-
-    2. Start the necessary services using Docker:
-        ```
+    1. Clone this repository
+    
+    2. Open a terminal and navigate to the folder containing this README file and install dependencies:
+        npm install
+    
+    3. Start the necessary services using Docker:
         docker-compose up
-        ```
 
-    3. Initialize the ClickHouse database:
-        ```
-        npm run start:db
-        ```
+    4. Open a new terminal (t0) in the same folder then initialize the ClickHouse database:
+        npm run initdb
 
-    4. Start the Kafka producer in the first terminal:
-        ```
-        npm run start:producer
-        ```
+    5. Start the Kafka producer in t0:
+        npm run producer
 
-    5. Open a second terminal and navigate to the same project folder:
-        ```
-        cd <project-folder>
-        ```
+    6. Open a second terminal (t1) and navigate to the same project folder then start the Kafka consumer::
+        npm run consumer
 
-    6. Start the Kafka consumer:
-        ```
-        npm run start:consumer
-        ```
+    7. Once satisfied with the data generated, stop the producer by pressing `Ctrl+C` in the producer terminal (t0).
 
-    7. Start the query interface API:
-        ```
-        npm run start:query
-        ```
-
-    8. Once satisfied with the data generated, stop the producer by pressing `Ctrl+C` in the producer terminal.
+    8. Start the query interface API and click on the links to see results:
+        npm run query_api
 
 ########################################################
 Examples of Usage and Queries
