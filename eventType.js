@@ -5,7 +5,6 @@ export default avro.Type.forSchema({
     fields: [
         {name: 'userId', type: 'int'},
         {name: 'timeStamp', type: 'long'},
-        {name: 'date', type: 'string'},
         { 
             name: 'event', 
             type: { 
